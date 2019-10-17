@@ -19,6 +19,7 @@ decouple = "*"
 pickel = "*"
 pickle = "*"
 pickle-mixin = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
