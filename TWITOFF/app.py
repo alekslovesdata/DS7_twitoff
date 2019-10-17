@@ -1,6 +1,7 @@
 """Main application for twitoff"""
 
 #imports
+#import pickle
 from decouple import config
 from flask import Flask, render_template, request
 from .models import DB, User
@@ -46,6 +47,9 @@ def create_app():
             message = 'Cannot compare a user to themselves!'
         else:
             prediction = predict_user(user1, user2, request.values['tweet_text'])
+            # prediction=predict_user(user1, user2, request.values['tweet_text'], CACHE)
+            # CACHED_COMPARISONS.add((user1,user2))
+            # CACHE.set('comparisons', dumps(CACHED_COMPARISONS))
             message = '"{}" is more likely to be said by {} than {}'.format(
                 request.values['tweet_text'], user1 if prediction else user2,
                 user2 if prediction else user1)
