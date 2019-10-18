@@ -1,8 +1,5 @@
 """Main application for twitoff"""
 
-#imports
-#import pickle
-from decouple import config
 from flask import Flask, render_template, request
 from .models import DB, User
 from .predict import predict_user
