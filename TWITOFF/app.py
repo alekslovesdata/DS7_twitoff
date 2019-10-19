@@ -1,6 +1,6 @@
 """Main application for twitoff"""
 #to run in flask server: from decouple import config
-#from decouple import config
+from decouple import config
 from flask import Flask, render_template, request
 from .models import DB, User
 from .predict import predict_user
