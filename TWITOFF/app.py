@@ -1,10 +1,13 @@
 """Main application for twitoff"""
 #to run in flask server: from decouple import config
 from decouple import config
+from dotenv import load_dotenv
 from flask import Flask, render_template, request
 from .models import DB, User
 from .predict import predict_user
 from .twitter import add_or_update_user
+
+load_dotenv()
 
 def create_app():
     """create and configures an instance of a flask app"""
